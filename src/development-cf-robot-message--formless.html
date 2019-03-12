@@ -80,7 +80,7 @@
 		></script>
 
 		<script
-			id="conversational-form-development" 
+			id="conversational-form-development"
 			type="text/javascript"
 			src="../build/cf/ConversationalForm.js"
 		></script>
@@ -130,7 +130,7 @@
 			src="../build/cf/ui/ScrollController.js"
 		></script>
 
-		<script 
+		<script
 			type="text/javascript"
 			src="../build/cf/data/Dictionary.js"
 		></script>
@@ -254,7 +254,7 @@
 			// check formless.json
 			var testValidation = function(dto, success, error){
 				console.log("testValidation setup from formless.json, dto:", dto);
-				if(dto.text.indexOf("holmes") != -1)
+				if(dto.text.indexOf("holmes") !== -1)
 					return success();
 				return error();
 			};
@@ -458,7 +458,7 @@
 						// fake loading...
 						success();
 					}, 1000);
-					
+
 				}
 				xhr.onerror = function(){
 					error("Webservice failed??")
@@ -483,7 +483,7 @@
 					// add callback hooks..
 					json.options.submitCallback = onFormlessSubmitted.bind(window);
 					json.options.flowStepCallback = onStepCallback.bind(window);
-					
+
 					// add UI options
 					json.options.userInterfaceOptions = {
 						controlElementsInAnimationDelay: 250,
@@ -496,7 +496,7 @@
 							showThumb: false
 						}
 					}
-					
+
 					// start one w. json
 					cfInstance = window.cf.ConversationalForm.startTheConversation(json);
 					document.getElementById("context").appendChild(cfInstance.el);

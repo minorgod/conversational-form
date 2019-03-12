@@ -1,0 +1,63 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": false,
+		"target": "esnext",
+		"module": "esnext",
+		"strict": false,
+		"noImplicitThis": false,
+		"noStrictGenericChecks": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"strictFunctionTypes": false,
+		"strictPropertyInitialization": false,
+		"strictNullChecks": false,
+		"noImplicitAny": false,
+		"pretty": false,
+		"skipLibCheck": false,
+		"jsx": "preserve",
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"webpack-env",
+			"jest",
+			"vuetify",
+			"conversational-form"
+		],
+		"paths": {
+			"@/*": [
+				"src/*"
+			]
+		},
+		"lib": [
+			"es2015",
+			"es6",
+			"es7",
+			"dom",
+			"dom.iterable",
+			"scripthost"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"tests/**/*.ts",
+		"tests/**/*.tsx"
+	],
+	"files": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"tests/**/*.ts",
+		"tests/**/*.tsx"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

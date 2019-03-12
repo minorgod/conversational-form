@@ -1,66 +1,68 @@
-/// <reference path="../logic/EventDispatcher.ts"/>
+import ConversationalForm from '../ConversationalForm'
+import EventDispatcher from '../logic/EventDispatcher'
 
-// namespace
-namespace cf {
+
 	// interface
-	export interface IBasicElementOptions{
-		eventTarget: EventDispatcher;
+export interface IBasicElementOptions {
+		eventTarget: EventDispatcher
 		cfReference?: ConversationalForm,
 		// set a custom template
 		customTemplate?: string
 	}
 
-	export interface IBasicElement{
-		el: HTMLElement;
+export interface IBasicElement {
+		el: HTMLElement
 		// template, can be overwritten ...
-		getTemplate(): string;
-		dealloc(): void;
+		getTemplate(): string
+		dealloc(): void
 	}
 
 	// class
-	export class BasicElement implements IBasicElement{
-		public el: HTMLElement;
-		protected eventTarget: EventDispatcher;
-		protected cfReference: ConversationalForm;
+export class BasicElement implements IBasicElement {
+
+		public el: HTMLElement
+		protected eventTarget: EventDispatcher
+		protected cfReference: ConversationalForm
 		// optional value, but this can be used to overwrite the UI of Conversational Interface
-		protected customTemplate: string;
+		protected customTemplate: string
 
-		constructor(options: IBasicElementOptions){
-			this.eventTarget = options.eventTarget;
-			this.cfReference = options.cfReference;
+		constructor(options: IBasicElementOptions) {
+			this.eventTarget = options.eventTarget
+			this.cfReference = options.cfReference
 
-			if(options.customTemplate)
-				this.customTemplate = options.customTemplate;
+			if(options.customTemplate) {
+				this.customTemplate = options.customTemplate
+			}
 
 			// TODO: remove
-			if(!this.eventTarget)
-				throw new Error("this.eventTarget not set!! : " + (<any>this.constructor).name);
+			if(!this.eventTarget) {
+				throw new Error('this.eventTarget not set!! : ' + (this.constructor as any).name)
+			}
 
-			this.setData(options);
-			this.createElement();
-			this.onElementCreated();
-		}
-
-		protected setData(options: IBasicElementOptions){
-			
-		}
-
-		protected onElementCreated(){
-			
-		}
-
-		private createElement(): Element{
-			var template: HTMLTemplateElement = document.createElement('template');
-			template.innerHTML = this.getTemplate();
-			this.el = <HTMLElement> template.firstChild || <HTMLElement>template.content.firstChild;
-			return this.el;
+			this.setData(options)
+			this.createElement()
+			this.onElementCreated()
 		}
 
 		// template, should be overwritten ...
-		public getTemplate () : string {return this.customTemplate || `should be overwritten...`};
+		public getTemplate (): string {return this.customTemplate || 'should be overwritten...'}
+		public dealloc() {
+			this.el.parentNode.removeChild(this.el)
+		}
 
-		public dealloc(){
-			this.el.parentNode.removeChild(this.el);
+		protected setData(options: IBasicElementOptions) {
+		
+		}
+
+		protected onElementCreated() {
+		
+		}
+
+		private createElement(): Element {
+			const template: HTMLTemplateElement = document.createElement('template')
+			template.innerHTML = this.getTemplate()
+			this.el = template.firstChild as HTMLElement || template.content.firstChild as HTMLElement
+			return this.el
 		}
 	}
-}
+

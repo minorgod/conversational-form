@@ -1,67 +1,66 @@
-// namespace
-namespace cf {
+
 	// interface
 
 	// class
-	export interface DataTag extends Object{
-		tag: string; // input, select etc.
-		type: string; // "password", "text" etc.
-		children: Array<DataTag>; // "password", "text" etc.
+	export interface DataTag extends Object {
+		tag: string // input, select etc.
+		type: string // "password", "text" etc.
+		children: DataTag[] // "password", "text" etc.
 		// TODO: extend native tag interface?
 	}
 
 	export class TagsParser {
-		public static parseTag(element: DataTag) : HTMLElement | HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement{
-			let tag: HTMLElement | HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement = <HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement> document.createElement(element.tag);
-			tag.setAttribute("cf-formless", "");
+		public static parseTag(element: DataTag): HTMLElement | HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement {
+			const tag: HTMLElement | HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement = document.createElement(element.tag) as HTMLInputElement | HTMLSelectElement | HTMLButtonElement | HTMLOptionElement
+			tag.setAttribute('cf-formless', '')
 
 			// TODO: ES6 mapping??
-			for(var k in element){
-				if(k !== "tag" && k !== "children"){
-					tag.setAttribute(k, (<any> element)[k])
+			for(const k in element) {
+				if(k !== 'tag' && k !== 'children') {
+					tag.setAttribute(k, (element as any)[k])
 				}
 			}
 
-			return tag;
+			return tag
 
 		}
 
-		public static parseGroupTag(groupTag: DataTag) : HTMLElement {
-			const groupEl: HTMLElement = TagsParser.parseTag(groupTag);
-			const groupChildren: Array<DataTag> = groupTag.children;
+		public static parseGroupTag(groupTag: DataTag): HTMLElement {
+			const groupEl: HTMLElement = TagsParser.parseTag(groupTag)
+			const groupChildren: DataTag[] = groupTag.children
 			for (let j = 0; j < groupChildren.length; j++) {
-				let fieldSetTagData: DataTag = groupChildren[j];
-				let tag: HTMLElement = TagsParser.parseTag(fieldSetTagData);
-				groupEl.appendChild(tag);
+				const fieldSetTagData: DataTag = groupChildren[j]
+				const tag: HTMLElement = TagsParser.parseTag(fieldSetTagData)
+				groupEl.appendChild(tag)
 			}
-			return groupEl;
+			return groupEl
 		}
 
-		public static parseJSONIntoElements(data: any) : HTMLFormElement{
-			const formEl: HTMLFormElement = document.createElement("form");
+		public static parseJSONIntoElements(data: any): HTMLFormElement {
+			const formEl: HTMLFormElement = document.createElement('form')
 			for (let i = 0; i < data.length; i++) {
-				let element: DataTag = <DataTag>data[i];
-				const tag: HTMLElement = TagsParser.parseTag(element);
+				const element: DataTag = data[i] as DataTag
+				const tag: HTMLElement = TagsParser.parseTag(element)
 
 				// add sub children to tag, ex. option, checkbox, etc.
-				if(element.children && element.children.length > 0){
+				if(element.children && element.children.length > 0) {
 					for (let j = 0; j < element.children.length; j++) {
-						let subElement = TagsParser.parseTag(element.children[j]);
-						tag.appendChild(subElement);
+						const subElement = TagsParser.parseTag(element.children[j])
+						tag.appendChild(subElement)
 					}
 				}
 				
-				formEl.appendChild(tag);
+				formEl.appendChild(tag)
 			}
 
-			return formEl;
+			return formEl
 		}
 
-		public static isElementFormless(element: HTMLElement): boolean{
-			if(element.hasAttribute("cf-formless"))
-				return true;
+		public static isElementFormless(element: HTMLElement): boolean {
+			if(element.hasAttribute('cf-formless')) {
+				return true
+			}
 
-			return false;
+			return false
 		}
 	}
-}

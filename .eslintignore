@@ -1,0 +1,9 @@
+/build/
+/config/
+/dist/
+/test/unit/coverage/
+/node_modules/
+/src/components/coreui-pro/
+/src/components/views-old/
+/babel.config.js
+/vue.config.js
