@@ -33,7 +33,7 @@ global.gulp.task('typescript-form', function() {
 		.pipe(typescript({
 			noImplicitAny: true,
 			target: "ES5",
-			module: "none"//AMD... etc.
+			module: "esnext"//AMD... etc.
 		}))
 		.on('error', swallowError)
 		.pipe(global.gulp.dest(dst))

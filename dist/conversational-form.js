@@ -298,7 +298,7 @@ try {
 			}
 		}
 
-		return new cf.ConversationalForm(options);
+		return new ConversationalForm(options);
 	};
 }));
 
@@ -312,10 +312,10 @@ try {
 	} else if(typeof module === "object" && module.exports) {
 		module.exports = (root.conversationalform = factory(require("conversational-form")));
 	} else {
-		root.conversationalform = factory(cf.ConversationalForm);
+		root.conversationalform = factory(ConversationalForm);
 	}
 	}(window, function(conversationalform) {
 		// module code here....
-		return cf.ConversationalForm || conversationalform;
+		return ConversationalForm || conversationalform;
 	}
 ));

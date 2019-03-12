@@ -12,7 +12,7 @@ export interface ControlElementVector {
 		y: number,
 		centerX?: number,
 		centerY?: number,
-		el: cf.IControlElement
+		el: IControlElement
 	}
 
 export interface IControlElementOptions extends IBasicElementOptions {

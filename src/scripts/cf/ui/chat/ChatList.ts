@@ -29,7 +29,7 @@ export class ChatList extends BasicElement {
 		private responses: ChatResponse[]
 		private input: UserInputElement
 
-		private updateTimer: number = 0
+		private updateTimer: any = 0
 
 		constructor(options: IBasicElementOptions) {
 			super(options)

@@ -92,7 +92,7 @@ export class ControlElements {
 		private infoElement: HTMLElement
 		private currentControlElement: IControlElement
 
-		private animateInFromReponseTimer: number = 0
+		private animateInFromReponseTimer: any = 0
 		private ignoreKeyboardInput: boolean = false
 		private rowIndex: number = -1
 		private columnIndex: number = 0

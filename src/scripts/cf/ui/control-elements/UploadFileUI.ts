@@ -34,7 +34,7 @@ export class UploadFileUI extends Button {
 		private onDomElementChangeCallback: () => void
 		private progressBar: HTMLElement
 		private loading: boolean = false
-		private submitTimer: number = 0
+		private submitTimer: any = 0
 		private _fileName: string = ''
 		private _readerResult: string = ''
 		private _files: FileList

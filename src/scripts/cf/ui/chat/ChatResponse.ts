@@ -70,7 +70,7 @@ export class ChatResponse extends BasicElement {
 		private image: string
 		private container: HTMLElement
 		private _tag: ITag
-		private readyTimer: number = 0
+		private readyTimer: any = 0
 		private responseLink: ChatResponse // robot reference from use
 		private onReadyCallback: () => void
 

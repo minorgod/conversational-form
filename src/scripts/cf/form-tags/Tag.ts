@@ -1,11 +1,4 @@
-import '../data/Dictionary'
-import 'InputTag'
-import 'ButtonTag'
-import 'SelectTag'
-import 'CfRobotMessageTag'
-import '../ConversationalForm'
-import '../logic/EventDispatcher'
-import '../parsing/TagsParser'
+
 import EventDispatcher from '../logic/EventDispatcher'
 import FlowManager, {FlowDTO} from '../logic/FlowManager'
 import {Dictionary} from '../data/Dictionary'

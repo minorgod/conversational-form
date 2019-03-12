@@ -56,7 +56,7 @@ export class UserTextInput extends UserInputElement implements IUserInputElement
 		private onInputBlurCallback: () => void
 		private readonly onOriginalTagChangedCallback: () => void
 		private readonly onControlElementProgressChangeCallback: () => void
-		private errorTimer: number = 0
+		private errorTimer: any = 0
 		private initialInputHeight: number = 0
 		private shiftIsDown: boolean = false
 		private keyUpCallback: () => void

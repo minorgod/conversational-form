@@ -1,4 +1,4 @@
-import Helpers, { TouchVector2d } from '../logic/Helpers'
+import { Helpers, TouchVector2d } from '../logic/Helpers'
 import EventDispatcher from '../logic/EventDispatcher'
 
 export interface IScrollControllerOptions {
