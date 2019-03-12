@@ -2,9 +2,10 @@
   "name": "conversational-form",
   "version": "0.9.90",
   "description": "Turning web forms into conversations",
-  "main": "dist/conversational-form.js",
+  "main": "src/scripts/cf/ConversationalForm.ts",
   "directories": {
-    "dist": "distribution"
+    "dist": "distribution",
+    "src": "src"
   },
   "repository": {
     "type": "git",
