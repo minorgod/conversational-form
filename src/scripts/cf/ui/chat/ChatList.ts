@@ -1,9 +1,16 @@
-import ChatResponse from './ChatResponse'
-import BasicElement from '../BasicElement'
-import FlowManager from '../../logic/FlowManager'
+import {ChatResponse} from './ChatResponse'
+import { BasicElement, IBasicElementOptions } from '../BasicElement'
+import FlowManager, { FlowDTO, FlowEvents } from '../../logic/FlowManager'
+import { UserInputElement, UserInputEvents } from '../inputs/UserInputElement';
+import { ControlElementsEvents } from '../control-elements/ControlElements';
+import { Dictionary } from '../../data/Dictionary';
+import { ITag } from '../../form-tags/Tag';
+import { InputKeyChangeDTO } from '../inputs/UserTextInput';
+import ConversationalForm from '../../ConversationalForm';
+import { ITagGroup } from '../../form-tags/TagGroup';
 
 
-	// interface
+// interface
 export const ChatListEvents = {
 		CHATLIST_UPDATED: 'cf-chatlist-updated'
 	}

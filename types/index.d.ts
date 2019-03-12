@@ -1,6 +1,3 @@
-import ConversationalForm, { cf } from './ConversationalForm'
 
-export default ConversationalForm
-export as namespace cf;
-
+export {ConversationalForm} from './ConversationalForm'
 export {EventDispatcher} from './EventDispatcher'

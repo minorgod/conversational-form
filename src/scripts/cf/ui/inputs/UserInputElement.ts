@@ -3,11 +3,12 @@ import {ControlElements} from '../control-elements/ControlElements'
 import FlowManager, { FlowEvents, FlowDTO } from '../../logic/FlowManager'
 import {IUserInput} from '../../interfaces/IUserInput'
 import ConversationalForm from '../../ConversationalForm'
-import { IUserInputElement } from '../../interfaces/IUserInputElement'
+
 import { ITag } from '../../form-tags/Tag'
 import { ITagGroup } from '../../form-tags/TagGroup'
 import { Helpers } from '../../logic/Helpers'
 import { ChatListEvents } from '../chat/ChatList'
+import IUserInputElement from '../../interfaces/IUserInputElement';
 
 // Abstract UserInpt element, should be extended when adding a new UI for user input
 

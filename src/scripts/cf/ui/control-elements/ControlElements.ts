@@ -11,12 +11,12 @@ import {ScrollController} from '../ScrollController'
 import {ChatResponse} from '../chat/ChatResponse'
 import '../../../typings/globals/es6-promise/index.d.ts'
 import ConversationalForm from '../../ConversationalForm'
-import { FlowEvents, FlowDTO } from '../../logic/FlowManager'
-import { UserInputEvents } from '../inputs/UserInputElement'
-import { ITag } from '../../form-tags/Tag'
-import { ChatListEvents } from '../chat/ChatList'
-import { Dictionary } from '../../data/Dictionary'
-import { InputKeyChangeDTO, UserTextInput } from '../inputs/UserTextInput'
+import { FlowEvents, FlowDTO } from '../../logic/FlowManager';
+import { UserInputEvents } from '../inputs/UserInputElement';
+import { ITag } from '../../form-tags/Tag';
+import { ChatListEvents } from '../chat/ChatList';
+import { Dictionary } from '../../data/Dictionary';
+import { InputKeyChangeDTO, UserTextInput } from '../inputs/UserTextInput';
 
 
 export const ControlElementsEvents = {

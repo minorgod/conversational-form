@@ -1,11 +1,18 @@
 import '../ui/BasicElement'
 import '../ui//control-elements/ControlElements'
 import '../logic/FlowManage'
-import {IUserInputElement} from '../interfaces/IUserInputElement'
-import {UserInputSubmitButton, IUserInput} from '../ui/inputs/UserInputElement'
-import '../interfaces/IUserInputElement'
 
-	// interface
+
+import '../interfaces/IUserInputElement'
+import EventDispatcher from './EventDispatcher';
+import { FlowEvents, FlowDTO } from './FlowManager';
+import { UserInputSubmitButton } from '../ui/inputs/UserInputSubmitButton';
+import { IUserInput } from '../interfaces/IUserInput';
+import ConversationalForm from '../ConversationalForm';
+import { UserInputEvents } from '../ui/inputs/UserInputElement';
+import { Dictionary } from '../data/Dictionary';
+
+// interface
 export interface IMicrophoneBridgeOptions {
 		el: HTMLElement
 		button: UserInputSubmitButton
@@ -240,7 +247,6 @@ export class MicrophoneBridge {
 						// show result in UI
 						this.inputErrorCount = 0
 						this.inputCurrentError = error
-					} else {
 					}
 
 					this.inputErrorCount++

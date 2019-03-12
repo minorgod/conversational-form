@@ -1,10 +1,13 @@
-import BasicElement from '../BasicElement'
-import Helpers from '../../logic/Helpers'
+import {BasicElement, IBasicElementOptions } from '../BasicElement'
+import {Helpers} from '../../logic/Helpers'
 import ConversationalForm from '../../ConversationalForm'
-import IUserInterfaceOptions from '../../interfaces/IUserInterfaceOptions'
+import {IUserInterfaceOptions} from '../../interfaces/IUserInterfaceOptions'
+import { ChatList } from './ChatList';
+import { ITag } from '../../form-tags/Tag';
+import { FlowDTO } from '../../logic/FlowManager';
 
 
-	// interface
+// interface
 export interface IChatResponseOptions extends IBasicElementOptions {
 		response: string
 		image: string
@@ -224,7 +227,7 @@ export class ChatResponse extends BasicElement {
 							this.tryClearThinking()
 
 							this.textEl.innerHTML += '<p>' + str + '</p>'
-							const p: NodeListOf<HTMLElement> = this.textEl.getElementsByTagName('p')
+							const p: NodeListOf<HTMLElement> = this.textEl.getElementsByTagName('p') as any
 							p[p.length - 1].offsetWidth
 							p[p.length - 1].classList.add('show')
 
@@ -253,7 +256,7 @@ export class ChatResponse extends BasicElement {
 					this.tryClearThinking()
 
 					this.textEl.innerHTML = '<p>' + innerResponse + '</p>'
-					const p: NodeListOf<HTMLElement> = this.textEl.getElementsByTagName('p')
+					const p: NodeListOf<HTMLElement> = this.textEl.getElementsByTagName('p') as any
 					p[p.length - 1].offsetWidth
 					p[p.length - 1].classList.add('show')
 

@@ -1,2 +1,2 @@
 
-export const cf = '../src/scripts/cf/ConversationalForm'
+export const ConversationalForm = '../src/scripts/cf/ConversationalForm'

@@ -1,7 +1,12 @@
 import {Button} from './Button'
-import Helpers from '../../logic/Helpers'
+import { IControlElementOptions, ControlElementProgressStates, ControlElementEvents } from './ControlElement';
+import { Helpers } from '../../logic/Helpers';
+import { Dictionary } from '../../data/Dictionary';
+import { ConversationalForm } from '../../ConversationalForm';
+import { FlowDTO, FlowEvents } from '../../logic/FlowManager';
 
-	// interface
+
+// interface
 
 	// class
 export class UploadFileUI extends Button {
