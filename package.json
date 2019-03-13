@@ -24,6 +24,7 @@
     "build"
   ],
   "devDependencies": {
+    "es6-promise": "^4.2.6",
     "gulp": "^3.9.1",
     "jasmine-core": "^3.3.0",
     "karma": "^3.1.3",

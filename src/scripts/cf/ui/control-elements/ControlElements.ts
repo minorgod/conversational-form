@@ -7,7 +7,7 @@
 /// <reference path="../../logic/EventDispatcher.ts"/>
 /// <reference path="../ScrollController.ts"/>
 /// <reference path="../chat/ChatResponse.ts"/>
-/// <reference path="../../../typings/globals/es6-promise/index.d.ts"/>
+/// <reference path="../../../../../node_modules/es6-promise/es6-promise.d.ts"/>
 
 // namespace
 namespace cf {
@@ -327,7 +327,7 @@ namespace cf {
 
 					// set element visibility.
 					element.visible = elementVisibility;
-					if(elementVisibility && element.visible) 
+					if(elementVisibility && element.visible)
 						itemsVisible.push(element);
 				}
 
