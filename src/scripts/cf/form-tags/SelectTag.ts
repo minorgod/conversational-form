@@ -32,7 +32,7 @@ export class SelectTag extends Tag {
 
 			// build the option tags
 			this.optionTags = []
-			const domOptionTags: HTMLCollectionOf<HTMLOptionElement> = this.domElement.getElementsByTagName('option')
+			const domOptionTags: HTMLCollectionOf<HTMLOptionElement> = this.domElement.getElementsByTagName('option') as any
 			for (let i = 0; i < domOptionTags.length; i++) {
 				const element: HTMLOptionElement = domOptionTags[i] as HTMLOptionElement
 				const tag: OptionTag = Tag.createTag(element) as OptionTag

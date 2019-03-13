@@ -23,15 +23,16 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"types": [
-			"node",
-			"webpack-env",
-			"jest",
-			"vuetify",
-			"conversational-form"
+			//"node",
+			//"webpack-env",
+			//"jest",
+			//"vuetify",
+			//"conversational-form"
 		],
 		"paths": {
 			"@/*": [
-				"src/*"
+				"src/*",
+			  "types/*"
 			]
 		},
 		"lib": [
