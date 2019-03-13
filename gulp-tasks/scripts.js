@@ -31,8 +31,17 @@ global.gulp.task('typescript-form', function() {
 			extension: '.js'
 		}))
 		.pipe(typescript({
-			noImplicitAny: true,
-			target: "ES5",
+			noImplicitAny: false,
+			target: "es5",
+			lib: [
+				"es5",
+				"es2015",
+				//"es6",
+				//"es7",
+				"dom",
+				"dom.iterable",
+				"scripthost"
+			],
 			module: "none"//AMD... etc.
 		}))
 		.on('error', swallowError)
